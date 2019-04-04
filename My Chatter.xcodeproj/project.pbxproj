@@ -14,6 +14,7 @@
 		2B28A52B225644BA002755BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B28A529225644BA002755BD /* LaunchScreen.storyboard */; };
 		2B28A5332256476E002755BD /* ChatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B28A5322256476E002755BD /* ChatterViewController.swift */; };
 		2B28A53522564E6E002755BD /* ChatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B28A53422564E6E002755BD /* ChatAPI.swift */; };
+		2BB140E4225669A500C7BA0C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB140E3225669A500C7BA0C /* Message.swift */; };
 		38B61374B1C12320EFE81318 /* Pods_My_Chatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9094DD72AF7B186A7E3E8405 /* Pods_My_Chatter.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		2B28A52C225644BA002755BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B28A5322256476E002755BD /* ChatterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatterViewController.swift; sourceTree = "<group>"; };
 		2B28A53422564E6E002755BD /* ChatAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAPI.swift; sourceTree = "<group>"; };
+		2BB140E3225669A500C7BA0C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		9094DD72AF7B186A7E3E8405 /* Pods_My_Chatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Chatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82CC228B177BDEEA540C2D7 /* Pods-My Chatter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Chatter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-My Chatter/Pods-My Chatter.debug.xcconfig"; sourceTree = "<group>"; };
 		F95CD39F1071D629600145C3 /* Pods-My Chatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Chatter.release.xcconfig"; path = "Pods/Target Support Files/Pods-My Chatter/Pods-My Chatter.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				2B28A5322256476E002755BD /* ChatterViewController.swift */,
 				2B28A53422564E6E002755BD /* ChatAPI.swift */,
 				2B28A522225644B6002755BD /* StatsViewController.swift */,
+				2BB140E3225669A500C7BA0C /* Message.swift */,
 				2B28A524225644B6002755BD /* Main.storyboard */,
 				2B28A527225644BA002755BD /* Assets.xcassets */,
 				2B28A529225644BA002755BD /* LaunchScreen.storyboard */,
@@ -218,6 +221,7 @@
 			files = (
 				2B28A523225644B6002755BD /* StatsViewController.swift in Sources */,
 				2B28A521225644B6002755BD /* AppDelegate.swift in Sources */,
+				2BB140E4225669A500C7BA0C /* Message.swift in Sources */,
 				2B28A53522564E6E002755BD /* ChatAPI.swift in Sources */,
 				2B28A5332256476E002755BD /* ChatterViewController.swift in Sources */,
 			);
