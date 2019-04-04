@@ -1,22 +1,33 @@
-//
-//  AppDelegate.swift
-//  My Chatter
-//
-//  Created by ryosuke kubo on 2019/04/04.
-//  Copyright © 2019 ryosuke kubo. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    private let api = ChatAPI()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // ChatAPI
+        api.connect { [unowned self] newMessege in
+            self.persist(messages: newMessege)
+        }
+        
+        let statsVC = StatsViewController()
+        statsVC.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 1)
+        let chatterVC = ChatterViewController()
+        chatterVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
+        let navController = UINavigationController(rootViewController: chatterVC)
+        let tabController = UITabBarController()
+        tabController.viewControllers = [statsVC, navController]
+        window?.rootViewController = tabController
+        window?.makeKeyAndVisible()
         return true
+    }
+    
+    private func persist(messages: [(String, String)]) {
+        // Persist a list of messages to database
+
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -40,6 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    
 
 
 }
