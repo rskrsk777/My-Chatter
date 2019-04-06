@@ -1,14 +1,27 @@
 import UIKit
+import RealmSwift
 
 class StatsViewController: UIViewController {
 
     var titleLabel: UILabel!
     var totalMessageLabel: UILabel!
     
+    private var messagesToken: NotificationToken?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.purple
         setupLabel()
+        
+        let realm = try! Realm()
+        let messages = realm.objects(Message.self)
+        messagesToken = messages.observe {[weak self] _ in
+            guard let this = self else { return }
+            UIView.transition(with: this.totalMessageLabel, duration: 0.33, options: [.transitionFlipFromTop], animations: {
+                this.totalMessageLabel.text = "Total Messages: \(messages.count)"
+            }, completion: nil)
+        }
+        
     }
     
     

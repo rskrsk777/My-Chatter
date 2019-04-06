@@ -1,0 +1,6 @@
+framework module Pods_My_Chatter {
+  umbrella header "Pods-My Chatter-umbrella.h"
+
+  export *
+  module * { export * }
+}
