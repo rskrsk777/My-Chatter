@@ -56,6 +56,7 @@ extension ChatterViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value2, reuseIdentifier: "Cell")
         let message = messages![indexPath.row]
+        cell.contentView.backgroundColor = message.isNew ? UIColor.white : UIColor.lightGray
         let formattedDate = formatter.string(from: message.date)
         cell.textLabel?.text = message.isNew ? "[\(message.from)]" : message.from
         cell.detailTextLabel?.text = String(format: "(%@) %@", formattedDate, message.text)
@@ -81,5 +82,14 @@ extension ChatterViewController {
     
     func deleteMessage (_ message: Message) {
         message.delete()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let message = messages![indexPath.row]
+        let realm = try! Realm()
+        realm.beginWrite()
+        message.isNew = false
+        try! realm.commitWrite()
+        tableView.reloadData()
     }
 }
